@@ -1,5 +1,5 @@
 define([
-    'mvvm/models/person',
+    'mvvm/models/item',
     'backbonesp'
 ], function(itemModel, Backbone_SP) {
     var collection = Backbone_SP.List.extend({

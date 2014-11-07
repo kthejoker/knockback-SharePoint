@@ -1,9 +1,9 @@
 define([
     'jquery',
-    'mvvm/collections/people',
-    'mvvm/views/people',
+    'mvvm/collections/items',
+    'mvvm/viewmodels/items',
     'knockout'
-], function($, peopleCollection, peopleViewModel, ko) {
+], function($, itemsCollection, itemsViewModel, ko) {
 
 
     var initialize = function() {
@@ -11,11 +11,11 @@ define([
         ko.components.register('list-item', {
             require: 'mvvm/components/ListItem'
         });
-        peopleCollection.fetch();
-        people_view_model = new peopleViewModel(peopleCollection);
+        itemsCollection.fetch();
+        vm = new itemsViewModel(itemsCollection);
 
         $(document).ready(function() {
-            ko.applyBindings(people_view_model);
+            ko.applyBindings(vm);
         });
 
     }

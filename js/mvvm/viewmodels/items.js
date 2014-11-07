@@ -1,6 +1,6 @@
 define([
         'knockback',
-        'mvvm/views/person'
+        'mvvm/viewmodels/item'
     ],
     function(kb, viewModel) {
         var collectionViewModel = kb.ViewModel.extend({

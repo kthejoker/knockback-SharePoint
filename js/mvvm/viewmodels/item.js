@@ -1,6 +1,6 @@
 define(['knockback'],
     function(kb) {
-        var personViewModel = kb.ViewModel.extend({
+        var itemViewModel = kb.ViewModel.extend({
             constructor: function(model) {
                 //  required to make calls to kb.ViewModel base methods e.g. model()
 
@@ -18,5 +18,5 @@ define(['knockback'],
             }
         });
 
-        return personViewModel;
+        return itemViewModel;
     });

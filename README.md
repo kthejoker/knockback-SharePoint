@@ -21,9 +21,9 @@ Backbone.Sharepoint.SOAP.Custom
 
 Finally, there is one custom library which I have forked from <a href='https://github.com/lstak/Backbone.SharePoint'>lstak's Backbone.Sharepoint</a> repository. 
 
-Some context: Out of the box, Backbone.js assumes you have a standard REST interface for interfacing with your models, utilizing URLs and HTTP requests to manage each CRUD operation ("/items/1" to get an item with id 1, "/items/create" to create a new item, etc.) You're allowed to override a Backbone.Model and Backbone.Collection's <b>sync</b> method with your own custom method, and lstak wrote a complete implementation of Sharepoint 2010 and 2013's OData protocols for getting and modifying list items.
+Some context: Out of the box, Backbone.js assumes you have a standard REST interface for interfacing with your models, utilizing URLs and HTTP requests to manage each CRUD operation (<code>/items/1</code> to get an item with id 1, <code>/items/create</code> to create a new item, etc.) You're allowed to override a Backbone.Model and Backbone.Collection's <code>sync</code> method with your own custom method, and lstak wrote a complete implementation of Sharepoint 2010 and 2013's OData protocols for getting and modifying list items.
 
-However, Sharepoint 2007 only offers a SOAP protocol rather than OData for interfacing with lists, and lstak's repository has a "read entire rec9list/view" implementation in SOAP and one great big honking TODO for everything else. So I forked his Backbone Sharepoint for SOAP implementation and extended it to full CRUD. That said, there are still some major TODOs in this new code:
+However, Sharepoint 2007 only offers a SOAP protocol rather than OData for interfacing with lists, and lstak's repository has a "read entire list/view" implementation in SOAP and one great big honking TODO for everything else. So I forked his Backbone Sharepoint for SOAP implementation and extended it to full CRUD. That said, there are still some major TODOs in this new code:
 
 * Read is still "get all items from a list", even when passed a specific item ID
 * Similarly, no CAML Where clauses or ViewFields to limit result sets
@@ -32,7 +32,7 @@ However, Sharepoint 2007 only offers a SOAP protocol rather than OData for inter
 
 So the final dependency chain looks something like:
 
-* Index.html uses a Knockout binding with a custom element (<pre>&lt;list-item&gt;</pre>) in a foreach loop to print each list item.
+* Index.html uses a Knockout binding with a custom element (<code>&lt;list-item&gt;</code>) in a foreach loop to print each list item.
 * The foreach loop ooperates on a Knockback ViewModel
 * Which is pretty much just a thin service layer for a Knockback collectionObservable
 * Which is a spiffy glue object between 
@@ -65,8 +65,8 @@ Customization
 
 * Add additional attributes from your list item type to the kb.ViewModel constructor in <i>js/mvvm/viewmodels/item.js</i>.
 * Modify the <i>js/mvvm/components/list-item-template.html</i> to affect how each list item is presented on the page.
-* Consider more interesting knockout bindings like <code>event</code>, <pre>options</pre>, and <pre>if/visible</pre>. Or custom bindings!
-* Build another custom component for just displaying the title, and use an <pre>if</pre> binding and a boolean to flip between the editor and the display components.
+* Consider more interesting knockout bindings like <code>event</code>, <code>options</code>, and <code>visible</code>. Or custom bindings!
+* Build another custom component for just displaying the title, and use an <code>if</code> binding and a boolean to flip between the editor and the display components.
 * Consider implementing Backbone-Relational for an even more ORM-style data layer (relational models in SharePoint = never not a terrible idea, but well, here you are)
 * Upgrade to Sharepoint Online! Oh, wait.
 

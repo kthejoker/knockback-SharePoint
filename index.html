@@ -1,0 +1,33 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Knockback Sharepoint 2007 Demo</title>
+    <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="css/app.css" />
+    <script data-main="js/main" src="js/vendor/require.js"></script>
+</head>
+
+<body>
+
+    <div class="row">
+        <div class="large-12 columns pageTitle">
+            <h2>Knockback Sharepoint 2007 Demo</h2>
+        </div>
+    </div>
+
+    <!-- ko foreach: collection -->
+
+    <list-item params="ListItem: $data"></list-item>
+    <!-- /ko -->
+    <div class="row">
+        <div class="large-12 columns">
+            <input type='button' data-bind='click: save' value="Save" />
+            <input type='button' data-bind='click: create' value="Create" />
+        </div>
+    </div>
+</body>
+
+</html>

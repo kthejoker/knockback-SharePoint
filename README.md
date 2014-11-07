@@ -65,7 +65,7 @@ Customization
 
 * Add additional attributes from your list item type to the kb.ViewModel constructor in <i>js/mvvm/viewmodels/item.js</i>.
 * Modify the <i>js/mvvm/components/list-item-template.html</i> to affect how each list item is presented on the page.
-* Consider more interesting knockout bindings like <pre>event</pre>, <pre>options</pre>, and <pre>if/visible</pre>. Or custom bindings!
+* Consider more interesting knockout bindings like <code>event</code>, <pre>options</pre>, and <pre>if/visible</pre>. Or custom bindings!
 * Build another custom component for just displaying the title, and use an <pre>if</pre> binding and a boolean to flip between the editor and the display components.
 * Consider implementing Backbone-Relational for an even more ORM-style data layer (relational models in SharePoint = never not a terrible idea, but well, here you are)
 * Upgrade to Sharepoint Online! Oh, wait.
